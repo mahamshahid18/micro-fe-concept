@@ -1,5 +1,21 @@
 import React from "react"
+import { Provider } from 'react-redux';
 
-const App = () => <h1>Hello from React</h1>
+import { Tasks } from './tasks.component';
+import { store } from './state';
 
-export default App
+export class App extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    
+    render() {
+        return (
+            <React.Fragment>
+                <Provider store={store}>
+                    <Tasks />
+                </Provider>
+            </React.Fragment>
+        );
+    }
+}
