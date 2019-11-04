@@ -8,12 +8,17 @@ export class App extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
             <React.Fragment>
                 <Provider store={store}>
-                    <Tasks />
+                    <div className="mx-3 my-2">
+                        <h1 className="mx-3 my-3">
+                            React App
+                        </h1>
+                        <Tasks />
+                    </div>
                 </Provider>
             </React.Fragment>
         );

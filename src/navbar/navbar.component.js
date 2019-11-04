@@ -71,6 +71,16 @@ export const Navbar = () => (
                 margin-bottom: 0.5rem;
             }
 
+            .my-2 {
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .my-3 {
+                margin-top: 1.75rem;
+                margin-bottom: 1.75rem;
+            }
+
             .mx-3 {
                 margin-left: 1.75rem;
                 margin-right: 1.75rem;

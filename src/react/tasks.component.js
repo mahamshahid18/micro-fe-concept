@@ -27,7 +27,7 @@ class _Tasks extends React.Component {
                         }
                     </ul>
                 </div>
-                <div className="mx-3 my-1">
+                <div className="mx-3 my-2">
                     <button onClick={() => addTask('Some random text')}>
                         Add random task
                     </button>
