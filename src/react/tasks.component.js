@@ -1,6 +1,8 @@
 import React from "react"
 import { connect } from 'react-redux';
 
+import { ReactAppActionTypes } from './state';
+
 class _Tasks extends React.Component {
     constructor(props) {
         super(props);
@@ -57,8 +59,10 @@ function mapDispatchToProps(dispatch) {
     return {
         addTask: (todoText) => dispatch(
             {
-                type: 'ADD_TASK',
-                payload: todoText
+                type: ReactAppActionTypes.AddTask,
+                payload: {
+                    text: todoText
+                }
             }
         )
     }

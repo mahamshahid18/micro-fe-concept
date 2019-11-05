@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 
-const initialState = {
+export const initialState = {
     tasks: [
         {
             id: 0,
@@ -13,16 +13,20 @@ const initialState = {
     ]
 };
 
+export const ReactAppActionTypes = {
+    AddTask: 'ADD_TASK'
+};
+
 function reducer(state = initialState, action) {
     switch(action.type) {
-        case 'ADD_TASK':
+        case ReactAppActionTypes.AddTask:
             return {
                 ...state,
                 tasks: [
                     ...state.tasks,
                     {
                         id: state.tasks.length,
-                        text: action.payload
+                        text: action.payload.text
                     }
                 ]
             };

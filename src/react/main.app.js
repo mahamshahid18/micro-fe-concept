@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import singleSpaReact from 'single-spa-react';
 import { App } from './root.component.js';
+import { messageHandler } from './event-handler';
+import { resolve } from 'url';
 
 function domElementGetter() {
   return document.getElementById('container')
@@ -14,14 +16,16 @@ const reactLifecycles = singleSpaReact({
   domElementGetter,
 })
 
-export const bootstrap = [
-  reactLifecycles.bootstrap,
-];
+export function bootstrap() {
+  window.addEventListener('message', messageHandler);
+  return Promise.resolve();
+}
+
+export function unmount() {
+  window.removeEventListener('message');
+  return Promise.resolve();
+}
 
 export const mount = [
   reactLifecycles.mount,
-];
-
-export const unmount = [
-  reactLifecycles.unmount,
 ];
