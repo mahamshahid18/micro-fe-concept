@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>
+      Micro-Frontends Concept Test
+    </title>  
+  </head>
+  <body>
+    <!-- this will only work when the react tasks app is active -->
+    <div class="my-1" style="display: flex; justify-content: center; background-color: #cce4ff">
+        <button onclick="addTaskToReactApp()"
+                class="px-1 py-1 my-1"
+                style="background-color: #0077ff; color: #f5faff; border-radius: 4px; border: 1px solid #0077ff;">
+          Consumer: Add task to React Tasks App
+        </button>
+    </div>
+    <div id="root" style="display: flex;">
+        <div id="navbar"></div>
+        <div id="home"></div>
+        <div id="reacttasks"></div>
+        <div id="vue"></div>
+    </div>
+    <script src="/dist/single-spa.config.js"></script>
+    <script>
+      const addTaskToReactApp = () => {
+          const msg = {
+              dispatchedBy: 'Consumer',
+              dispatchedFor: 'ReactAppTasks',
+              messageType: 'ADD_TASK',
+              payload: {
+                  text: 'This task has been added by consumer app'
+              }
+          };
+
+          window.postMessage(msg, '*');
+      }
+    </script>
+  </body>
+</html>
