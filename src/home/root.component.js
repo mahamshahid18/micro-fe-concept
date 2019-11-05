@@ -8,9 +8,18 @@ export class App extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className='h-100 w-100'>
+                <div className='h-100 home-app'>
                     <HomeContainer />
                 </div>
+                <style>
+                    {
+                        `
+                            .home-app {
+                                background-color: #ccf5e5;
+                            }
+                        `
+                    }
+                </style>
             </React.Fragment>
         );
     }

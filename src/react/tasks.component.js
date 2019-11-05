@@ -30,7 +30,7 @@ class _Tasks extends React.Component {
                     </ul>
                 </div>
                 <div className="mx-3 my-2">
-                    <button onClick={() => addTask('Some random text')}>
+                    <button className="add-task-btn py-1" onClick={() => addTask('Some random text')}>
                         Add random task
                     </button>
                 </div>
@@ -40,6 +40,13 @@ class _Tasks extends React.Component {
                             .task-container {
                                 padding-left: 0.5rem;
                                 padding-right: 0.5rem;
+                            }
+
+                            .add-task-btn {
+                                color: #fff6e6;
+                                background-color: #ff8f00;
+                                border-radius: 4px;
+                                border: 1px solid #ff8f00;
                             }
                         `
                     }
