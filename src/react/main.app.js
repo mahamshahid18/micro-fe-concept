@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import singleSpaReact from 'single-spa-react';
+
 import { App } from './root.component.js';
 import { messageHandler } from './event-handler';
-import { resolve } from 'url';
 
 function domElementGetter() {
-  return document.getElementById('container')
+  return document.getElementById('reacttasks')
 }
 
 const reactLifecycles = singleSpaReact({

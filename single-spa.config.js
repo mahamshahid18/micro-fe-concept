@@ -24,4 +24,16 @@ registerApplication(
   () => location.pathname.indexOf('/react') === 0  ? true : false
 );
 
+registerApplication(
+  'tasks-react',
+  () => import('./src/react/main.app.js'),
+  () => location.pathname.indexOf('/tasksComm') === 0  ? true : false
+);
+
+registerApplication(
+  'tasks-react2',
+  () => import('./src/home/home.app.js'),
+  () => location.pathname.indexOf('/tasksComm') === 0  ? true : false
+);
+
 start();

@@ -5,10 +5,32 @@
     </title>  
   </head>
   <body>
+    <!-- this will only work when the react tasks app is active -->
+    <div style="display: flex; justify-content: center;">
+        <button onclick="addTaskToReactApp()">
+          Consumer: Add task to React Tasks App
+        </button>
+    </div>
     <div id="root" style="display: flex;">
         <div id="navbar"></div>
-        <div id="container"></div>
+        <div id="home"></div>
+        <div id="reacttasks"></div>
+        <div id="vue"></div>
     </div>
     <script src="/dist/single-spa.config.js"></script>
+    <script>
+      const addTaskToReactApp = () => {
+          const msg = {
+              dispatchedBy: 'Consumer',
+              dispatchedFor: 'ReactAppTasks',
+              messageType: 'ADD_TASK',
+              payload: {
+                  text: 'This task has been added by consumer app'
+              }
+          };
+
+          window.postMessage(msg, '*');
+      }
+    </script>
   </body>
 </html>

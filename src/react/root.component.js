@@ -9,13 +9,15 @@ export class App extends React.Component {
         super(props);
     }
 
+    componentDidCatch() {}
+
     render() {
         return (
             <React.Fragment>
                 <Provider store={store}>
-                    <div className="mx-3 my-2">
+                    <div className="h-100 w-100 mx-3 my-2">
                         <h1 className="mx-3 my-3">
-                            React App
+                            React Tasks App
                         </h1>
                         <Tasks />
                     </div>
