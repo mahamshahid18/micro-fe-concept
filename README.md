@@ -17,7 +17,7 @@ After registering applications, we need to implement a starter point for each ap
 - Mount
 - Unmount
 
-These 3 functions can have any implementation within them according to the scenario we require. However, single-spa expects these functions to return a Promise so that it knows when the function has finished and it can perform further executions.
+These 3 functions can have any implementation within them according to the scenario we require. However, single-spa expects these functions to return a Promise so that it knows when the function has finished and it can perform further executions. ([Read more here](https://medium.com/canopy-tax/a-step-by-step-guide-to-single-spa-abbbcb1bedc6))
 
 Code for registration of application can be be found in the [single-spa.config.js](single-spa.config.js) file. Whereas, starter files for each app can be found in their directories. For example, for the React Tasks App, it can be found in the [main.app.js](src/react/main.app.js) file.
 
